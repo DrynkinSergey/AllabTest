@@ -2,7 +2,7 @@ import React from 'react'
 import location from '../assets/Location.png'
 import stars from '../assets/stars.png'
 import bookmark from '../assets/Bookmark.png'
-import { SingleItemI } from '../App'
+import { SingleItemI } from './JobList'
 
 const JobSingleItem = ({
 	email,
