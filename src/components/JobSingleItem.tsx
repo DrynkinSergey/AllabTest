@@ -5,6 +5,7 @@ import bookmark from '../assets/Bookmark.png'
 import { SingleItemI } from './JobList'
 
 const JobSingleItem = ({
+	id,
 	email,
 	name,
 	phone,
@@ -14,9 +15,13 @@ const JobSingleItem = ({
 	description,
 	pictures,
 	createdAt,
+	onClickItem,
 }: SingleItemI) => {
 	return (
-		<section className='shadow-md relative bg-white rounded-md px-3 py-4 flex'>
+		<section
+			onClick={() => onClickItem(id)}
+			className='shadow-md relative bg-white rounded-md px-3 py-4 flex'
+		>
 			<div className=' max-w-[85px] max-h-[85px] mr-4 overflow-hidden rounded-full'>
 				<img src={pictures} alt='jobImg' className='' />
 			</div>
@@ -45,4 +50,4 @@ const JobSingleItem = ({
 		</section>
 	)
 }
-export default JobSingleItem
+export default React.memo(JobSingleItem)

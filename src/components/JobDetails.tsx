@@ -2,12 +2,13 @@ import React from 'react'
 import img1 from '../assets/Img1.png'
 import img2 from '../assets/Img2.png'
 import map from '../assets/contactMap.png'
-import location from '../assets/Location.png'
-type Props = {}
+type Props = {
+	clear: (id: null) => void
+}
 
 const JobDetails = (props: Props) => {
 	return (
-		<section className='p-5'>
+		<section className='p-5 container mx-auto'>
 			<h1 className='text-[#3A4562] text-3xl pb-2 mb-4 border-b font-bold'>
 				Job Details
 			</h1>
@@ -122,7 +123,10 @@ const JobDetails = (props: Props) => {
 				</p>
 			</div>
 
-			<button className='uppercase text-white bg-[#384564] py-5 px-8 rounded-lg mx-auto block mt-6 mb-[135px]'>
+			<button
+				onClick={() => props.clear(null)}
+				className='uppercase text-white bg-[#384564] py-5 px-8 rounded-lg mx-auto block mt-6 mb-[135px]'
+			>
 				Apply now
 			</button>
 			<h2 className='text-[#3A4562] text-3xl pb-2 mb-4 border-b font-bold'>
@@ -139,10 +143,10 @@ const JobDetails = (props: Props) => {
 			<span className='text-[#38415DD1] text-lg mb-2 block'>
 				Employment type
 			</span>
-			<ul className='mb-8 flex justify-between text-center text-[#55699E] font-bold '>
-				<li className='bg-gray-200 py-4 px-7 rounded-md'>Full-time</li>
-				<li className='bg-gray-200 py-4 px-7 rounded-md'>Part-time</li>
-				<li className='bg-gray-200 py-4 px-7 rounded-md'>Temporary</li>
+			<ul className='mb-8  flex  text-center text-[#55699E] font-bold '>
+				<li className='bg-gray-200 py-4 px-6 rounded-md mr-1'>Full-time</li>
+				<li className='bg-gray-200 py-4 px-6 rounded-md mr-1'>Part-time</li>
+				<li className='bg-gray-200 py-4 px-6 rounded-md mr-1'>Temporary</li>
 			</ul>
 			<span className='block mb-2'>Benefits</span>
 			<ul className='mb-[63px] flex text-[#988B49] font-bold gap-2'>
@@ -163,8 +167,8 @@ const JobDetails = (props: Props) => {
 				<span>+43 (01) 40400-12090,</span>
 				<span>post_akh_diz@akhwien.at</span>
 			</div>
-			<div className='relative'>
-				<img className='w-full rounded-b-lg' src={map} alt='' />
+			<div className='relative '>
+				<img className=' rounded-b-lg w-full' src={map} alt='' />
 
 				<svg
 					className='absolute top-[60px] left-[70px] w-[40px]'
